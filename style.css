@@ -1,0 +1,937 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: #1b1b1b;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 60px;
+  gap: 100px;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00ff6a;
+  border-radius: 15px;
+}
+
+/* Header & Nav */
+
+.header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  padding: 40px;
+  backdrop-filter: blur(3px);
+  /* box-shadow: 0 1px 10px #000000;
+  background: #1b1b1b; */
+  z-index: 9999;
+}
+
+.header.hide {
+  transform: translateY(-100%)
+}
+
+.hamburger {
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  right: 0;
+  gap: 5px;
+  z-index: 10000;
+  padding-right: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger.hide {
+  transform: translateY(-100%);
+}
+
+.ham {
+  width: 40px;
+  height: 5px;
+  background: #00ff6a;
+}
+
+#close-x, #close-y{
+  transition: transform 0.3s ease-in-out;
+}
+
+#remove {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0%);
+}
+
+#remove.remove {
+  transform: translateX(260%);
+}
+
+#remove.add {
+  transform: translateX(0%);
+}
+
+#close-x.animation {
+  position: relative;
+  transform: rotate(50deg);
+}
+
+#close-y.animation {
+  position: absolute;
+  margin-bottom: 7.5px;
+
+  transform: rotate(-50deg);
+}
+
+.menu-scroll {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-end;
+  z-index: 99999;
+}
+
+.menu-scroll.open {
+  backdrop-filter: blur(1.2px);
+}
+
+.info {
+  display: flex;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 65%;
+  background: #252525;
+  box-shadow: -7px 0 10px 2px rgba(0, 0, 0, 0.05);
+  transform: translateX(110%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.info.open {
+  transform: translateX(0);
+}
+
+.info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.info ul li {
+  list-style-type: none;
+
+}
+
+.info ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+.info span {
+  color: #00ff6a;
+}
+
+
+.cursor {
+  position: absolute;
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top,rgba(51, 51, 51, 0.5), rgba(255,255,255, 0));
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 0;
+} 
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav img {
+  width: 3%;
+}
+
+nav ul {
+  display: flex;
+  gap: 90px;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li span {
+  color: #00ff6a;
+}
+
+nav ul li a {
+  display: flex;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+}
+
+
+section {
+  z-index: 1;
+}
+
+/* Social + Email Side Panel */
+
+#scfo {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  padding: 60px;
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16rem;
+}
+
+#scfo .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  filter: invert();
+}
+
+.socials img {
+  width: 30%;
+}
+
+.email {
+  display: flex;
+  color: #fff;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.email h3 {
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+/* Container & Hero */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  gap: 200px;
+  z-index: 100;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  color: white;
+  gap: 1.875rem;
+  padding-top: 150px;
+  padding-bottom: 200px;
+}
+
+#hero h1 {
+  font-family: 'Inter', sans-serif; /* Add Inter if you imported it */
+  font-size: 4rem;
+}
+
+#hero h3 {
+  font-weight: 300;
+  font-size: 1.25rem;
+  color: #00ff6a;
+}
+
+#hero p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  width: 45%;
+}
+
+#hero p span {
+  color: #00ff6a;
+}
+
+#hero button {
+  width: 30%;
+  height: 60px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #00ff6a;
+  color: white;
+  font-size: 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  transition: 0.3s ease;
+}
+
+#hero button:hover{
+  background: rgba(0, 255, 106, 0.1);
+}
+
+/* About Me Section */
+
+#about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container h1 {
+  font-family: inter;
+  margin-bottom: 3rem;
+  color: white;
+  width: 100%;
+  text-align: left;
+}
+
+.container h1 span {
+  font-family: 'JetBrains Mono', monospace;
+  color: #00ff6a;
+  font-size: 1.25rem;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.inner p {
+  margin-bottom: 1.25rem;
+  width: 85%;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.inner p span {
+  color: #00ff6a;
+}
+
+.inner .img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* 
+.inner .img .bg{
+  width: 100%;
+  height: 190.48px;
+  background: #00ff6a;
+  margin-left: 0rem;
+} */
+
+/* make the container the background and use the image as overlay and set z-index */
+
+.inner img {
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
+}
+
+#projects .project-num {
+  margin-bottom: 40px;
+}
+.project-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 400px;
+  background: #37393d;
+  border-radius:5px;
+  transition: transform 0.3s ease;
+  padding: 3rem 0;
+}
+
+.project-info {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+}
+
+.project h1{
+  margin-bottom: 0px;
+  width: 85%;
+  color: #ffffff;
+}
+
+.project p {
+  width: 85%;
+  color: white;
+}
+
+.project .img {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project .img a{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project .img .folder {
+  width: 12%;
+  height: auto;
+  align-self: center;
+}
+
+.project .img .redirect {
+    filter: invert();
+  width: 30%;
+  height: auto;
+  align-self: center;
+}
+
+
+/*#projects button,*/ #contact button{
+  width: 15%;
+  height: 60px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #00ff6a;
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 4rem;
+  transition: 0.3s ease;
+}
+
+#contact button:hover {
+  background: #00ff6a;
+  background: rgba(0, 255, 106, 0.1);
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+#contact .contact{
+  font-size: 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 100;
+  text-align: center;
+
+}
+
+#contact .msg {
+  font-size: 4rem;
+  text-align: center;
+}
+
+#contact a {
+  text-decoration: none;
+  color: white;
+}
+
+#contact button {
+  margin: 0rem;
+}
+
+#contact img {
+  filter: invert();
+  transform: rotate(45deg);
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(87, 86, 86);
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+footer p a{
+  text-decoration: none;
+  color: #336849;
+}
+
+footer .socials {
+  display: none;
+}
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 30px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  nav img{
+    width: 14%;
+  }
+  nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  #scfo {
+    display: none;
+  }
+
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+    align-items: left;
+    gap: 1.25rem;
+    padding-top: 250px;
+    padding-bottom: 250px;
+  }
+
+  #hero h3{
+    font-size: 1.1rem;
+  }
+
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+    width: 80%;
+  }
+
+  #hero button {
+    width: 65%;
+    font-size: 1rem;
+    margin-top: 40px;
+  }
+
+  #about-me {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: left;
+    justify-content: left;
+    margin: 0;
+  }
+
+
+  #about-me .inner {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about-me .inner img {
+    margin-top: 2.5rem;
+    width: 70%;
+  }
+
+  #about-me .inner div p{
+    width: 100%;
+  }
+
+  .project-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(0, auto);
+    gap: 20px;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .project h1 {
+    font-size: 1.25rem;
+    width: 100%;
+  }
+
+  .project p {
+    width: 90%;
+    font-size: 0.8rem;
+  }
+
+  #contact img {
+    transform: rotate(45deg);
+  }
+
+  #contact button {
+    width: 60%;
+  }
+
+  footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  footer .socials {
+    display: flex;
+  }
+
+  footer .socials img {
+    filter: invert();
+    width: 30%;
+  }
+
+}
+
+/* Ipad */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  body {
+    padding: 120px;
+  }
+  .cursor {
+    display: none;
+  }
+
+    #hero p {
+    width: 80%;
+  }
+
+  #hero button {
+    width: 55%;
+  }
+
+  #about-me {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: left;
+    justify-content: left;
+    margin: 0;
+  }
+
+
+  #about-me .inner {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about-me .inner img {
+    margin-top: 2.5rem;
+    width: 70%;
+  }
+
+  #about-me .inner div p{
+    width: 100%;
+  }
+
+  #scfo {
+    margin: 0;
+    padding: 25px;
+  }
+
+  .project-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+  }
+  
+  .project {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .project h1 {
+    font-size: 1.25rem;
+    width: 100%;
+  }
+
+  .project p {
+    font-size: 0.75rem;
+    font-weight: 100;
+    width: 100%;
+  }
+
+  .project .img {
+
+    display: fixed;
+    top: 0;
+  }
+
+  .project .img .folder {
+    width: 15%;
+  }
+
+  #contact button {
+    width: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .hamburger, .menu-scroll {
+    display: none;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 600px) {
+   .cursor {
+    display: none;
+  }
+
+     nav {
+    padding: 0;
+  }
+
+  nav img{
+    width: 14%;
+  }
+  nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  #scfo {
+    display: none;
+  }
+
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+    align-items: left;
+    gap: 1.25rem;
+    padding-top: 250px;
+    padding-bottom: 250px;
+  }
+
+  #hero h3{
+    font-size: 1.1rem;
+  }
+
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+    width: 80%;
+  }
+
+  #hero button {
+    width: 65%;
+    font-size: 1rem;
+    margin-top: 40px;
+  }
+
+
+  .project-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 48px;
+  }
+
+  .project h1 {
+    width: 85%;
+  }
+
+  .project p {
+    font-size: 0.75rem;
+    font-weight: 100;
+    width: 100%;
+  }
+
+  .project .img {
+
+    display: fixed;
+    top: 0;
+  }
+
+  .project .img .folder {
+    width: 15%;
+  }
+
+  #contact button {
+    width: 40%;
+  }
+
+    #about-me {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: left;
+    justify-content: left;
+    margin: 0;
+  }
+
+
+  #about-me .inner {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about-me .inner img {
+    margin-top: 2.5rem;
+    width: 70%;
+  }
+
+  #about-me .inner div p{
+    width: 100%;
+  }
+
+    .project-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(0, auto);
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 4rem 3rem;
+  }
+
+  .project h1 {
+    width: 100%;
+  }
+
+  .project p {
+    width: 90%;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 3840px) {
+  
+}
