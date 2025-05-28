@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -10,6 +11,12 @@ html {
   box-sizing: border-box;
 }
 
+h1, h3, p{
+  color: transparent;
+  background: linear-gradient(90deg,rgb(222, 222, 223) 0%, rgb(237, 238, 238) 50%, rgba(242, 242, 242, 1) 100%);
+  background-clip: text;
+}
+
 body {
   position: relative;
   display: flex;
@@ -18,7 +25,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   background: #1b1b1b;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   padding: 60px;
   gap: 100px;
 }
@@ -298,7 +305,7 @@ section {
   border: 1px solid #00ff6a;
   color: white;
   font-size: 1.25rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   transition: 0.3s ease;
 }
 
@@ -317,7 +324,7 @@ section {
 }
 
 .container h1 {
-  font-family: inter;
+  font-family: "Inter", sans-serif;
   margin-bottom: 3rem;
   color: white;
   width: 100%;
@@ -325,7 +332,7 @@ section {
 }
 
 .container h1 span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   color: #00ff6a;
   font-size: 1.25rem;
 }
@@ -334,8 +341,9 @@ section {
   display: flex;
   align-items: center;
   width: 70%;
-  color: white;
-  font-family: 'Space Grotesk', sans-serif;
+ color: transparent;
+  background: linear-gradient(90deg,rgb(222, 222, 223) 0%, rgb(237, 238, 238) 50%, rgba(242, 242, 242, 1) 100%);
+  background-clip: text;  font-family: 'Space Grotesk', sans-serif;
 }
 
 .inner ol {
@@ -436,13 +444,16 @@ section {
 .project h1{
   margin-bottom: 0px;
   width: 85%;
-  color: #ffffff;
+  color: transparent;
+  background: linear-gradient(to left, #00ff6a, #64ce92);
+  background-clip: text;
 }
 
 .project p {
   width: 85%;
-  color: white;
-}
+ color: transparent;
+  background: linear-gradient(90deg,rgb(222, 222, 223) 0%, rgb(237, 238, 238) 50%, rgba(242, 242, 242, 1) 100%);
+  background-clip: text;}
 
 .project .img {
   display: flex;
@@ -478,7 +489,7 @@ section {
   border: 1px solid #00ff6a;
   color: white;
   font-size: 1.1rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   margin-top: 4rem;
   transition: 0.3s ease;
 }
@@ -499,7 +510,7 @@ section {
 
 #contact .contact{
   font-size: 1.25rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 100;
   text-align: center;
 
@@ -507,6 +518,9 @@ section {
 
 #contact .msg {
   font-size: 4rem;
+   color: transparent;
+  background: linear-gradient(90deg,rgb(222, 222, 223) 0%, rgb(237, 238, 238) 50%, rgba(242, 242, 242, 1) 100%);
+  background-clip: text;
   text-align: center;
 }
 
