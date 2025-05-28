@@ -965,6 +965,164 @@ footer .socials {
   }
 }
 
+@media (min-width: 720px) and (max-width: 1600px) {
+
+    .cursor {
+    display: none;
+  }
+
+     nav {
+    padding: 0;
+  }
+
+  nav img{
+    width: 6%;
+  }
+  nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  #scfo {
+    display: none;
+  }
+
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+    align-items: left;
+    gap: 1.25rem;
+    padding-top: 250px;
+    padding-bottom: 250px;
+  }
+
+  #hero h3{
+    font-size: 1.5rem;
+  }
+
+  #hero h1 {
+    font-size: 4rem;
+  }
+
+  #hero p {
+    font-size: 1.5rem;
+    width: 80%;
+  }
+
+  #hero button {
+    width: 65%;
+    font-size: 1rem;
+    margin-top: 40px;
+  }
+
+  .inner p, .inner ol{
+    font-size: 1.25rem;
+  }
+
+  .project-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 48px;
+  }
+
+  .project h1 {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .project-text p {
+    font-size: 0.75rem;
+    font-weight: 100;
+    width: 160%;
+  }
+
+  .project .img {
+
+    display: fixed;
+    top: 0;
+  }
+
+  .project .img .folder {
+    width: 15%;
+  }
+
+  #contact button {
+    width: 40%;
+  }
+
+    #about-me {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: left;
+    justify-content: left;
+    margin: 0;
+  }
+
+
+  #about-me .inner {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about-me .inner img {
+    margin-top: 2.5rem;
+    width: 70%;
+  }
+
+  #about-me .inner div p{
+    width: 100%;
+  }
+
+    .project-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(0, auto);
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 4rem 3rem;
+  }
+
+  .project h1 {
+    width: 100%;
+  }
+
+  .project p {
+    width: 90%;
+    font-size: 0.8rem;
+  }
+}
+
 @media (min-width: 3840px) {
   
 }
