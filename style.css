@@ -12,7 +12,8 @@ html {
   box-sizing: border-box;
 }
 
-h1, h3, p{
+/* Updated to include h2 for general gradient effect */
+h1, h2, h3, p{
   color: transparent;
   background: linear-gradient(90deg,rgb(222, 222, 223) 0%, rgb(237, 238, 238) 50%, rgba(242, 242, 242, 1) 100%);
   background-clip: text;
@@ -324,7 +325,8 @@ section {
   width: 100%;
 }
 
-.container h1 {
+/* Changed from h1 to h2 for the "About Me" heading */
+.container h2 {
   font-family: "Inter", sans-serif;
   margin-bottom: 3rem;
   color: white;
@@ -332,7 +334,8 @@ section {
   text-align: left;
 }
 
-.container h1 span {
+/* Changed from h1 to h2 for the "About Me" heading span */
+.container h2 span {
   font-family: 'Space Grotesk', sans-serif;
   color: #00ff6a;
   font-size: 1.25rem;
@@ -371,8 +374,7 @@ section {
   display: flex;
   justify-content: center;
 }
-/* 
-.inner .img .bg{
+/* .inner .img .bg{
   width: 100%;
   height: 190.48px;
   background: #00ff6a;
@@ -395,6 +397,7 @@ section {
   gap: 1.875rem;
 }
 
+/* Changed from h1 to h2 for the "Projects" heading */
 #projects .project-num {
   margin-bottom: 40px;
 }
@@ -442,7 +445,8 @@ section {
   justify-content: center;
 }
 
-.project h1{
+/* Changed from h1 to h2 for project titles */
+.project h2{
   margin-bottom: 0px;
   width: 85%;
   color: transparent;
@@ -481,7 +485,40 @@ section {
   align-self: center;
 }
 
+#newsletter {
+  background: url('images/newsletter-cover.png');
+  background-size: cover;
+}
 
+#project-text {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Changed from h1 to h2 for newsletter heading */
+#project-text h2 {
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  animation: text-glow 1.5s ease-in-out infinite; /* 2s duration, smooth timing, repeats forever */
+}
+
+@keyframes text-glow {
+0% {
+text-shadow: 0 0 2px rgba(0, 255, 106, 0.4); 
+}
+50% {
+text-shadow: 0 0 5px rgba(0, 255, 106, 0.7); 
+}
+100% {
+text-shadow: 0 0 2px rgba(0, 255, 106, 0.4); 
+}
+}
 /*#projects button,*/ #contact button{
   width: 15%;
   height: 60px;
@@ -502,6 +539,7 @@ section {
 
 #contact {
   display: flex;
+  gap: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -509,6 +547,7 @@ section {
   width: 100%;
 }
 
+/* Changed from h1 to h2 for "Contact" heading */
 #contact .contact{
   font-size: 1.25rem;
   font-family: 'Space Grotesk', sans-serif;
@@ -517,6 +556,7 @@ section {
 
 }
 
+/* Changed from h1 to h2 for "Let's Work" heading */
 #contact .msg {
   font-size: 4rem;
    color: transparent;
@@ -645,6 +685,10 @@ footer .socials {
     margin: 0;
   }
 
+  /* Specific media query adjustment for h2 in about-me */
+  #about-me .inner h2 {
+    font-size: 1.25rem; /* Adjust if needed to match original h1 size */
+  }
 
   #about-me .inner {
     display: flex;
@@ -680,7 +724,8 @@ footer .socials {
     overflow: hidden;
   }
 
-  .project h1 {
+  /* Specific media query adjustment for h2 in projects */
+  .project h2 {
     font-size: 1.25rem;
     width: 100%;
   }
@@ -697,6 +742,19 @@ footer .socials {
   #contact button {
     width: 60%;
   }
+
+  /* Specific media query adjustment for h2 in contact */
+  #contact .contact, #contact .msg {
+    font-size: 1.25rem; /* Adjust if needed */
+  }
+  #contact .msg {
+    font-size: 2.2rem; /* Adjust if needed */
+  }
+
+  #iframe {
+    width: 100%;
+  }
+
 
   footer {
     display: flex;
@@ -747,6 +805,10 @@ footer .socials {
     margin: 0;
   }
 
+  /* Specific media query adjustment for h2 in about-me */
+  #about-me .inner h2 {
+    font-size: 1.8rem; /* Adjust if needed */
+  }
 
   #about-me .inner {
     display: flex;
@@ -787,7 +849,8 @@ footer .socials {
     overflow: hidden;
   }
 
-  .project h1 {
+  /* Specific media query adjustment for h2 in projects */
+  .project h2 {
     font-size: 1.25rem;
     width: 100%;
   }
@@ -810,6 +873,18 @@ footer .socials {
 
   #contact button {
     width: 40%;
+  }
+
+   #iframe {
+    width: 100%;
+  }
+
+  /* Specific media query adjustment for h2 in contact */
+  #contact .contact, #contact .msg {
+    font-size: 1.8rem; /* Adjust if needed */
+  }
+  #contact .msg {
+    font-size: 4rem; /* Adjust if needed */
   }
 }
 
@@ -892,7 +967,8 @@ footer .socials {
     padding: 48px;
   }
 
-  .project h1 {
+  /* Specific media query adjustment for h2 in projects */
+  .project h2 {
     width: 85%;
   }
 
@@ -916,7 +992,7 @@ footer .socials {
     width: 40%;
   }
 
-    #about-me {
+  #about-me {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -925,6 +1001,10 @@ footer .socials {
     margin: 0;
   }
 
+  /* Specific media query adjustment for h2 in about-me */
+  #about-me .inner h2 {
+    font-size: 1.25rem; /* Adjust if needed */
+  }
 
   #about-me .inner {
     display: flex;
@@ -962,13 +1042,22 @@ footer .socials {
     padding: 4rem 3rem;
   }
 
-  .project h1 {
+  /* Specific media query adjustment for h2 in projects */
+  .project h2 {
     width: 100%;
   }
 
   .project p {
     width: 90%;
     font-size: 0.8rem;
+  }
+
+  /* Specific media query adjustment for h2 in contact */
+  #contact .contact, #contact .msg {
+    font-size: 1.25rem; /* Adjust if needed */
+  }
+  #contact .msg {
+    font-size: 2.2rem; /* Adjust if needed */
   }
 }
 
